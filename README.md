@@ -1,27 +1,63 @@
-# HTTP
+# EHTTP
+**EHTTP** is a Angular library. Toastr and jQuery is required for user side exception UI. The goal is to create a simple core library that makes HTTP requests in Abstractional classes.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
+## Current Version
+0.1.0
 
-## Development server
+## Install
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+#### [npm](https://www.npmjs.com/package/toastr)
+```
+npm install --save ehttp
+```
+## Usage
+In your app.module.ts (bootstrap module)
+```
+import {EHTTPModule} from 'ehttp';
+```
+```
+@NgModule({
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    EHTTPModule.forRoot()
+  ]
+})
+```
 
-## Code scaffolding
+In your any.service.ts 
+```
+import {GET} from 'ehttp';
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+@Injectable()
+export class AnyService {
+  constructor(private get: GET) {}
 
-## Build
+  /**
+   * Get Test Data for demonstration
+   * @returns {Observable<any>}
+   */
+  public get(): Observable<any> {
+    const optionalRequestSpecificHeaders = {
+      "Content-Type": "application/json"
+    }
+    return this.get.setApi(optionalRequestSpecificHeaders).setApi('https://jsonplaceholder.typicode.com/posts').request();
+  }
+}
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Configurations
+You can path custom configuration to Module
+```
+EHTTPModule.forRoot(
+  {
+    headers: any;
+  }
+)
+```
+### headers
+Default headers for all XMLHTTP requests
 
-## Running unit tests
+## Copyright
+Copyright © 2018
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

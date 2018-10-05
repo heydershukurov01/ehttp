@@ -52,37 +52,12 @@ You can path custom configuration to Module
 EHTTPModule.forRoot(
   {
     headers: any;
-    message: {
-      unAuthenticated: string;
-      statusException: string;
-      serverException: string;
-      appException: string;
-    },
-    logout: string,
-    logoutCodes: number[],
-    hook: string;
   }
 )
 ```
 ### headers
 Default headers for all XMLHTTP requests
 
-### message
-Is for Exception Handler
- - `unAuthenticated` Message for showing 401 or 400 status codes while request made
- - `statusException` Message for showing 500 and other status codes request made
- - `serverException` Message for showing server side exception such as request failed or server did not responded to request
- - `appException`    Message for showing non HTTPEXception exception while making request such as incompatible response type 
-
-### logout
- url link for redirecting if response status code is 400 or 401
- 
-### logoutCodes
- Other status codes for redirecting to logout
- 
-### hook
- Slack hook url for live Exception reporting 
- 
 ## Copyright
 Copyright © 2018
 
