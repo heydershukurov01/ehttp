@@ -2,7 +2,7 @@
 **EHTTP** is a Angular library. Toastr and jQuery is required for user side exception UI. The goal is to create a simple core library that makes HTTP requests in Abstractional classes.
 
 ## Current Version
-0.1.0
+0.2.3
 
 ## Install
 
