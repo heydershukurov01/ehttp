@@ -90,7 +90,7 @@ export class PATCH extends HttpSandbox implements Request {
   /**
    * Make Request
    */
-  public request(parameter = ''): Observable<any> {
+  public request(parameter: string | number = ''): Observable<any> {
     const request = this._http.patch(super.getApi() + parameter, super.getPayload(), this.options());
     this.initialize();
     return request;

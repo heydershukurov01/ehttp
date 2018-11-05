@@ -1,7 +1,7 @@
 {
   "name": "ehttp",
   "description": "EHTTP: Make XMLHTTP requests over single object on ANGULAR 2+",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "keywords": ["HTTP", "XMLHTTP", "Angular", "Typescript"],
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.1.9",

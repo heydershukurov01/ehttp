@@ -91,7 +91,7 @@ export class POST extends HttpSandbox implements Request {
   /**
    * Make Request
    */
-  public request(parameter = ''): Observable<any> {
+  public request(parameter: string | number = ''): Observable<any> {
     const request = this._http.post(super.getApi() + parameter, super.getPayload(), this.options());
     this.initialize();
     return request;

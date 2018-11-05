@@ -83,7 +83,7 @@ export class DELETE extends HttpSandbox implements Request{
   /**
    * Make Request
    */
-  public request(parameter = ''): Observable<any> {
+  public request(parameter: string | number = ''): Observable<any> {
     const request = this._http.delete(super.getApi() + parameter, this.options());
     this.initialize();
     return request;
