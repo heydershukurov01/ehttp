@@ -129,6 +129,41 @@
           }
         }
       }
+    },
+    "ehttp": {
+      "root": "projects/ehttp",
+      "sourceRoot": "projects/ehttp/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ehttp/tsconfig.lib.json",
+            "project": "projects/ehttp/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ehttp/src/test.ts",
+            "tsConfig": "projects/ehttp/tsconfig.spec.json",
+            "karmaConfig": "projects/ehttp/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ehttp/tsconfig.lib.json",
+              "projects/ehttp/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ehttp-update"

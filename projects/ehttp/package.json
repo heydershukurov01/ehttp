@@ -1,0 +1,18 @@
+{
+  "name": "ehttp",
+  "description": "EHTTP: Make XMLHTTP requests over single object on ANGULAR 2+",
+  "version": "0.2.5",
+  "keywords": ["HTTP", "XMLHTTP", "Angular", "Typescript"],
+  "peerDependencies": {
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0"
+  },
+  "homepage": "https://github.com/heydershukurov01/ehttp",
+  "bugs": { "url" : "https://github.com/heydershukurov01/ehttp/issues"
+  , "email" : "heydar.shukurov@asan.gov.az"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/heydershukurov01/ehttp"
+  }
+}
