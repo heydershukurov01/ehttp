@@ -1,7 +1,6 @@
 /*
  * Public API Surface of ehttp
  */
-
 export * from './lib/ehttp.module';
 export {GET} from './lib/core/get.sandbox';
 export {POST} from './lib/core/post.sandbox';
