@@ -9,14 +9,18 @@ export class POST extends HttpSandbox implements Request {
 
   constructor(private _http: HttpClient, @Inject('config') private config: any) {
     super();
-    super.setHeaders(this.config.headers);
+    if (this.config) {
+      super.setHeaders(this.config.headers);
+    }
   }
   /**
   * Initialize
   */
   initialize() {
     super.initialize();
-    super.setHeaders(this.config.headers);
+    if (this.config) {
+      super.setHeaders(this.config.headers);
+    }
   }
   /**
    * Set Api
@@ -43,11 +47,11 @@ export class POST extends HttpSandbox implements Request {
       const base64Parameter = Object.keys(base64);
       const base64Param = base64Parameter[0];
       if (base64Parameter.length > 1) {
-        console.warn('[GET] [setParams] First step parameter must be single !');
+        console.warn('[POST] [setParams] First dimension parameter must be single !');
       }
       delete params.base64;
       const base64Object = btoa(unescape(encodeURIComponent(JSON.stringify(base64[base64Parameter[0]]))));
-      Object.assign(params, {[base64Param]: base64Object})
+      Object.assign(params, {[base64Param]: base64Object});
     }
     super.setParams(params);
 

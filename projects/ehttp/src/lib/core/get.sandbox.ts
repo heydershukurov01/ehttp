@@ -9,14 +9,18 @@ import {Request} from './request';
 export class GET extends HttpSandbox implements Request {
   constructor(private _http: HttpClient, @Inject('config') private config: Config) {
     super();
-    super.setHeaders(this.config.headers);
+    if (this.config) {
+      super.setHeaders(this.config.headers);
+    }
   }
   /**
    * Initialize
    */
   initialize() {
     super.initialize();
-    super.setHeaders(this.config.headers);
+    if (this.config) {
+      super.setHeaders(this.config.headers);
+    }
   }
   /**
    * Set Api
